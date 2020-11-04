@@ -1,4 +1,4 @@
-/*JS script to read vRA payload. Must have inputProperties as a Propertie on the workload Input. 
+/*JS script to read vRA 8.X payload. Must have inputProperties as a Propertie on the workload Input. 
 inputPropeties = Workflow Input (Properties)
 ipaddress = Workflow Output (string)
 hostname = Workflow Output (string)
