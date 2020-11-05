@@ -1,0 +1,41 @@
+formatVersion: 1
+inputs:
+   hostname:
+     type: string
+resources:
+  Cloud_vSphere_Machine_1:
+    type: Cloud.vSphere.Machine
+    properties:
+      #     variavel_string: '${input.variavel_string}'
+      #     variavel_numero: '${input.variavel_numero}'
+      image: centos7
+      cloudConfig: |
+        #cloudconfig
+        packages:
+          - wget
+        output: {all: '| tee -a /var/log/cloud-init-output.log'}
+        users:
+          - name: priscilla
+            groups: sudo
+            shell: /bin/bash
+            sudo: ['ALL=(ALL) NOPASSWD:ALL']
+            lock-passwd: false
+            passwd: teste123
+        chpasswd:
+          list: |
+            root:admin123
+          expire: False
+        runcmd:
+          - hostnamectl set-hostname '${input.hostname}'
+        final_message: "VREALIZE AUTOMATION FINALIZOU EM $UPTIME segundos"
+      networks:
+        - network: '${resource.Cloud_vSphere_Network_1.id}'
+          assignment: static
+      flavor: small
+      snapshotLimit: 1
+  Cloud_vSphere_Network_1:
+    type: Cloud.vSphere.Network
+    properties:
+      networkType: existing
+      constraints:
+        - tag: rede_nuvem
