@@ -1,4 +1,4 @@
-/*JS script to modify vRA 8.X custom Propertie. Must have inputProperties as a Propertie on the workload Input. 
+/*JS script to modify vRA 8.X custom Propertie.
 inputPropeties = Workflow Input (Properties)
 customProperties = Workflow Output (Properties)
 */

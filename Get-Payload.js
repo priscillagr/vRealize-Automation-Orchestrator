@@ -4,21 +4,36 @@ ipaddress = Workflow Output (string)
 hostname = Workflow Output (string)
 */
 
-//Get Ip Address from VM
-
+//Variables
 var ip;
+var userInput;
+var ipaddress;
+var resourceNames;
+var vmName;
+var osType;
+var customProperties = mew Properties();
+
+//Get IpAddress and ResourceName from vRA
+
 ip = inputProperties.get("addresses");
 ipaddress = ip[0][0];
+resourceNames = inputProperties.get("resourceNames");
+vmName = resourceNames[0];
 
-//Get customProperties
+//Get existing customProperties
 
-var hostname;
-var customProperties = new Properties();
 customProperties = inputProperties.get("customProperties");
-hostname = customProperties.get("vm_name");
+osType = customProperties.get("osType");
+
+//Get createdBlueprint customProperties
+
+userInput = customProperties.get("input_hostname");
 
 //Logs
 System.log("IP Variable Type: " +typeof ip);
 System.log("Hostname Variable Type: " +typeof hostname);
 System.log("Get Payload - Hostname:" + hostname);
 System.log("Get Payload - IPAddress:" + ipaddress);
+System.log("Get Payload - OS:" + osType);
+System.log("Get Payload - VM Name:" + vmName);
+
