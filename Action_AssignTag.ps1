@@ -6,7 +6,9 @@ category - string
 tagName -string
 vcuser - string
 vcpassword - string
-vcentere - string
+vcenter - string
+
+Observação: O script foi aproveitado e ajustado a partir desse KB: https://kb.vmware.com/s/article/2149731
 #>
 
 function Handler($context, $inputs) {

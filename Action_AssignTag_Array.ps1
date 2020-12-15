@@ -1,5 +1,16 @@
 <#
-Função para Array de Tags e Categorias
+<#
+Action escrita em PowerShell para configurar array de TAGss na VM. A tag é criada se ela não existir.
+Variaveis de entrada:
+vmName - string
+category - string Array
+tagName -string Array
+vcuser - string
+vcpassword - string
+vcenter - string
+
+Observação: O script foi aproveitado e ajustado a partir desse KB: https://kb.vmware.com/s/article/2149731
+#>
 #>
 
 function Handler($context, $inputs) {
@@ -28,7 +39,7 @@ function Handler($context, $inputs) {
 
 #POWERCLI SCRIPT
 
-Write-Host "Tamanho do Array: " $tagName.Length
+#Write-Host "Quantidade de Tags: " $tagName.Length
 
 For ($i=0; $i -lt $tagName.Length; $i++){
         Write-Host "Categoria: " $categoryName[$i]
