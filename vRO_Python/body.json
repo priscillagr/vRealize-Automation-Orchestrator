@@ -1,0 +1,23 @@
+{ "parameters":[
+        {
+            "value": {
+                "string": {
+                    "value": "TESTE"
+                }
+            },
+            "type": "string",
+            "name": "criteria",
+            "scope": "local"
+        },
+        {
+            "value": {
+                "string": {
+                    "value": "DANILO"
+                }
+            },
+            "type": "string",
+            "name": "var2",
+            "scope": "local"
+        }
+]
+}
