@@ -6,6 +6,12 @@ passwdid = '8d962d36-0e6f-4df1-8030-77bcd70b702a'
 jsonFile = '/home/vro-python-vra/root.json'
 lcmServer = '10.0.0.6'
 
+##Caso não queria usar o arquivo jsonFile, podemos fazer o parse direamente no codigo com
+# 
+#dataParse = {"rootPassword":"VMware1!"}
+#data = json.dumps(dataParse)
+#
+
 ##### Make no changes below this line ####
 # Import the modules to handle HTTP calls and work with json:
 #
